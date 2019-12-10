@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js" integrity="sha256-OgiHfllOBEOiWQ2OcBsDncRG2k7QBW9Rs1dB7MH2N2s=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="out">
+    </div>
+    
+    <button id="btn"> teste </button>
+
+    <script>
+      var socket = io.connect('http://localhost:4000')
+      var btn = document.getElementById('btn');
+      var out = document.getElementById('out');
+      btn.addEventListener('click', function(){
+        socket.emit('teste', {
+          message: 'teste',
+          handle: 'handle' 
+
+        })
+      } )
+
+      socket.on('teste', function(data){
+        out.innerHTML  +='<p><strong>' +data.id+'</strong>'+ data.handle + '</p>';
+      }) 
+    </script>
+  </body>
+</html>
