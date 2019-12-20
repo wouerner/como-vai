@@ -1,1 +1,3 @@
 # como-vai
+
+Estudando sockets
