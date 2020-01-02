@@ -14,9 +14,11 @@ app.use(bodyParser.urlencoded({ extended: false}));
 //     console.log('/');
 // });
 require('./controllers/authController')(app);
+require('./controllers/visitController')(app);
+require('./controllers/peopleController')(app);
 
 var server = app.listen(3000, function(){
-    console.log('server init port 4000');
+    console.log('Server Init port 3000');
 } );
 
 
